@@ -360,6 +360,7 @@ class Request(Resource):
 
         APPROVERS: Can change from almost any state, other than CANCELLED, EXPIRED and ( COMPLETED not yet furnished )
         EDITOR: Can't change to a COMPLETED state (ACCEPTED, REJECTED, CONDITION)
+        SYSTEM: Can consume a Name Request.
         """
 
         # do the cheap check first before the more expensive ones
@@ -404,9 +405,9 @@ class Request(Resource):
 
             ### STATE ###
 
+            ### STATE ###
             # all these checks to get removed to marshmallow
-            state = json_input.get('state', None)
-            if state:
+            elif state:
 
                 if state not in State.VALID_STATES:
                     return jsonify({"message": "not a valid state"}), 406
