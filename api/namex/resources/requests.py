@@ -324,7 +324,7 @@ class Request(Resource):
 
     @staticmethod
     @cors.crossdomain(origin='*')
-    @jwt.has_one_of_roles([User.APPROVER, User.EDITOR, User.VIEWONLY])
+    @jwt.has_one_of_roles([User.APPROVER, User.EDITOR, User.VIEWONLY, User.SYSTEM])
     def get(nr):
 
         # return jsonify(request_schema.dump(RequestDAO.query.filter_by(nr=nr.upper()).first_or_404()))
@@ -346,7 +346,7 @@ class Request(Resource):
 
     @staticmethod
     @cors.crossdomain(origin='*')
-    @jwt.has_one_of_roles([User.APPROVER, User.EDITOR])
+    @jwt.has_one_of_roles([User.APPROVER, User.EDITOR, User.SYSTEM])
     def patch(nr, *args, **kwargs):
         """  Patches the NR. Currently only handles STATE (with optional comment) and Previous State.
 
