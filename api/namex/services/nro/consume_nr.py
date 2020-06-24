@@ -114,7 +114,7 @@ def _consume_nro_names(oracle_cursor, nr, event_id, corp_num):
                 event_id=event_id,
                 instance_id=ni_id)
 
-            if name.state in [NameState.APPROVED, NameState.CONDITION]:
+            if name.state in (NameState.APPROVED.value, NameState.CONDITION.value):
                 consume_corp_num = corp_num
             else:
                 consume_corp_num = None

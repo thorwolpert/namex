@@ -402,9 +402,6 @@ class Request(Resource):
                 
                 warnings = nro.consume_nr(nrd, user.username, corp_num)
 
-
-            ### STATE ###
-
             ### STATE ###
             # all these checks to get removed to marshmallow
             elif state:
