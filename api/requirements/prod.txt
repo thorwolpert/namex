@@ -4,7 +4,7 @@ Flask-Caching
 Flask-Migrate
 Flask-Script
 Flask-Moment
-Flask-SQLAlchemy==2.4.1
+Flask-SQLAlchemy==2.4.4
 flask_restx
 Flask-Marshmallow==0.11.0
 flask-jwt-oidc>=0.2.0
